@@ -1,7 +1,5 @@
 //! An example user of Cannoli which symbolizes a trace
 
-#![feature(lazy_cell)]
-
 use std::sync::{Mutex, LazyLock, Arc};
 use std::process::Command;
 use std::collections::{HashMap, BTreeMap, BTreeSet};

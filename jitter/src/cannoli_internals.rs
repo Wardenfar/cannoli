@@ -645,7 +645,7 @@ unsafe extern fn $memop(pc: $tusize, is_write: i32, data_reg: usize,
 /// so we can actually use symbols in it! Yay!
 #[naked]
 unsafe extern fn $flush() {
-    std::arch::asm!(r#"
+    std::arch::naked_asm!(r#"
         // x86-64 SYS-V ABI:
         // Callee-saved: rbp, rbx, r12, r13, r14, r15, rsp
         // Caller-saved: rax, rdi, rsi, rdx, rcx, r8, r9, r10, r11
@@ -702,7 +702,7 @@ unsafe extern fn $flush() {
         pop rdi
         pop rax
         ret
-    "#, entry = sym $entry, exit = sym $exit, options(noreturn));
+    "#, entry = sym $entry, exit = sym $exit);
 }
 
 /// Called on successful mappings
