@@ -1,8 +1,6 @@
 //! Client for handling the IPC messages streamed from QEMU while it is
 //! executing
 
-#![feature(array_chunks)]
-
 use std::io::Read;
 use std::any::Any;
 use std::ffi::CStr;

@@ -11,4 +11,4 @@ cannoli = { path = "../cannoli" }
 libc = "0.2"
 
 [build-dependencies]
-bindgen = "0.66"
+bindgen = "0.72"
